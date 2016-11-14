@@ -93,6 +93,7 @@ button {
 
 .news-more-btn {
 	padding: 20px 0;
+	border: none;
 }
 
 .news-more-btn button {
@@ -118,7 +119,7 @@ button {
 }
 
 .news-c-detail h1 {
-	font-size: 1.6rem;
+	font-size: 1.7rem;
 	margin-bottom: 5px;
 	width: 100%;
 	overflow: hidden;
@@ -154,6 +155,8 @@ button {
 
 .news-c-d-article>p {
 	color: #4c4c4c;
+	font-size: 1.6rem;
+	text-indent: 2em;
 }
 
 .news-c-d-article-tail>p>span {
@@ -857,6 +860,7 @@ button {
 	border: none;
 	padding: 10px;
 	background: #FFFFFF;
+	padding-bottom: 30px;
 }
 .post-a-footer button {
 	display: block;
@@ -939,4 +943,8 @@ overflow: hidden;
 .news-content-tab{
 	width: 100%;
     overflow: hidden;
+}
+.news-intro-r p{
+	height: 35px;
+	overflow: hidden;
 }
