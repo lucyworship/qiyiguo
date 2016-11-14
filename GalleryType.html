@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" href="css/amazeui.min.css">
+		<link rel="stylesheet" href="css/all-wap.css">
+		<link rel="stylesheet" href="css/type-wap.css">
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/Sortable/Sortable.js"></script>
+		<script type="text/javascript" src="js/Sortable/jquery.binding.js"></script>
+		<title>图库类型</title>
+	</head>
+
+	<body>
+		<div class="pet_mian">
+			<!--header-->
+			<header class="am-header i-top memmber-top">
+				<div class="am-header-left am-header-nav s-blank memmber-blank">
+					<a href="">
+						<img src="images/news/back.png" /> 选择类型
+					</a>
+
+				</div>
+
+			</header>
+			<!--header-->
+			<div class="pet_circle-new" style="margin-top: 49px;">
+				<div class="am-list-news">
+					<!--列表标题-->
+					<div class="am-list-news-hd h-tk-tel">
+						<!--带更多链接-->
+						
+							<h2>常用频道<span>(点击删除，长按拖动调整顺序)</span></h2>
+						
+					</div>
+
+					<div class="am-list-news-bd">
+						<dl class="am-list h-tk-bq">
+							<dt>英雄联盟</dt>
+							<dt>炉石传说</dt>
+							<dt>熊猫星秀</dt>
+						</dl>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="pet_circle-new all-chanels" style="margin-bottom: 49px">
+				<div class="am-list-news">
+					<!--列表标题-->
+					<div class="am-list-news-hd h-tk-tel">
+						<!--带更多链接-->
+					
+							<h2>所有频道<span>(点击添加常用频道)</span></h2>
+						
+					</div>
+
+					<div class="am-list-news-bd">
+						<dl class="am-list h-tk-tjbq">
+							<dt class="append-active">英雄联盟</dt>
+							<dt class="append-active">炉石传说</dt>
+							<dt class="append-active">熊猫星秀</dt>
+							<dt>守望先锋</dt>
+							<dt>户外直播</dt>
+							<dt>主机游戏</dt>
+							<dt>DATA2</dt>
+							<dt>魔兽DATA1</dt>
+							<dt>DNF</dt>
+							<dt>穿越火线</dt>
+							<dt>魔兽世界</dt>
+							<dt>暗黑破坏神3</dt>
+							<dt>风暴英雄</dt>
+							<dt>体育竞技</dt>
+							<dt>我的世界</dt>
+
+						</dl>
+					</div>
+
+				</div>
+			</div>
+			<!--菜单-->
+			<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default ">
+				<ul class="am-navbar-nav am-cf am-avg-sm-4 i-footer">
+					<li>
+						<a href="">
+							<img src="images/news.png" alt="新闻" />
+							<span class="am-navbar-label">新闻</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="images/tj.png" alt="推荐" />
+							<span class="am-navbar-label">推荐</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="images/tv.png" alt="直播" />
+							<span class="am-navbar-label">直播</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="images/wo.png" alt="我" />
+							<span class="am-navbar-label">我</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--菜单-->
+		</div>
+		<script type="text/javascript">
+			function gen_click() 
+			{
+				$('.h-tk-bq dt').on('click', function () {
+					var txt = $(this).text();
+					$('.h-tk-tjbq dt').each(function (i, item) {
+						if ($(item).text()==txt) {
+							// console.log(item)
+							$(item).removeClass('append-active')
+						}
+
+					})
+					$(this).remove();
+				})
+			}
+			gen_click();
+			$('.h-tk-bq').sortable();			
+			$('.h-tk-tjbq dt').on('click', function () {
+				if (!$(this).hasClass('append-active')) {
+					$('.h-tk-bq').append('<dt>'+$(this).text()+'</dt>');
+					$(this).addClass('append-active');
+				}
+				gen_click()
+
+			})
+
+		</script>
+	</body>
+
+</html>
